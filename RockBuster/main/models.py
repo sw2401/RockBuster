@@ -8,7 +8,7 @@ class Movie(models.Model):
     genre = models.CharField(max_length=100)
     
 
-class Sences(models.Model):
-    sence = models.ForeignKey(Movie, on_delete=models.CASCADE)
+class Scenes(models.Model):
+    scene = models.ForeignKey(Movie, on_delete=models.CASCADE)
     actors = models.CharField(max_length=250)
 
