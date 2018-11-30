@@ -1,0 +1,149 @@
+html{
+  margin-top: 10px;
+  margin-left: 90px;
+  margin-right: 90px;
+  background-color: #911919;
+}
+
+h1{
+  background-color: #FDB31E;
+  color: black;
+  height: 75px;
+  width: 480px;
+  font-size: 70px;
+  font-family: 'Black Han Sans', sans-serif;
+  float: left;
+  margin-top: 1px;
+  text-align: center;
+  border-radius: 8px;
+}
+img{
+  border-radius: 50%;
+  float: left;
+  margin-left: 21px;
+  height: 150px;
+  position: absolute;
+}
+h2{
+  color: #FDB31E;
+  background-color: black;
+  width: 530px;
+  height: 75px;
+  font-size: 30px;
+  font-family: 'Black Han Sans', sans-serif;
+  text-align: center;
+  border-radius: 8px;
+  margin-left: 640px;
+  line-height: 38px;
+  letter-spacing: 1.5px;
+}
+
+#select{
+  margin-top: 91px;
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 25px;
+  background-color: white;
+  border-radius: 10px;
+  height: 95px;
+  width: 900px;
+  margin-left: 130px;
+  line-height: 90px;
+  position: relative;
+  z-index: 1;
+}
+#select h3{
+  letter-spacing: 1px;
+  width: 420px;
+  display: inline;
+  height: 40px;
+  font-size: 35px;
+  padding-right: 11px;
+}
+#select form{
+  display: inline;
+  width: 449px;
+  height: 40px;
+  font-size: 27px;
+}
+#select input[type=button]{
+  font-size: 22px;
+  width: 140px;
+  height: 50px;
+  border: none;
+  background-color: black;
+  color: #FDB31E;
+  font-family: 'Fredoka One', cursive;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#select input[type=button]:hover{
+  background-color: #FDB31E;
+  color: black;
+}
+
+#filters{
+  background-color: #4A4A4A;
+  width: 900px;
+  height: 490px;
+  margin-left: 130px;
+  padding-top: 5px;
+  display: flex;
+  text-align: center;
+  border-radius: 10px;
+  position:  relative;
+  top: -15px;
+}
+#filters h3{
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  width: 900px;
+  position: absolute;
+  letter-spacing: 1px;
+}
+
+#mSelect, #tvSelect, #vgSelect{
+  position: relative;
+  top: 80px;
+  left: 60px;
+  margin-bottom: 100px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 25px;
+  width: 780px;
+  background-color: #FDB31E;
+  border-radius: 10px;
+  height: 350px;
+}
+
+table{
+  height: 300px;
+  width: 400px;
+  margin-left: 90px;
+  margin-top: 20px;
+  float: left;
+}
+input[type=text],input[list="years"],input[list="genres"],input[list="rates"],input[list="prices"],input[list="platforms"],input[list="vg_genres"],input[list="vg_years"],input[list="vg_rates"]{
+    width: 250px;
+    height: 25px;
+    font-size: 15px;
+    font-family:sans-serif;
+}
+input[type=submit]{
+   float: left;
+   margin-top: 90px;
+   margin-left: 50px;
+   border-radius: 100px;
+   width: 180px;
+   height: 170px;
+   font-size: 45px;
+   border: none;
+   background-color: black;
+   color: #FDB31E;
+   font-family: 'Fredoka One', cursive;
+   cursor: pointer;
+ }
+input[type=submit]:hover{
+   background-color: white;
+   color: black;
+ }
