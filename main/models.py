@@ -14,6 +14,9 @@ class Movie(models.Model):
     rating = models.CharField(max_length=6, null=True)
     date_purchased = models.CharField(max_length=10)   # current date when added to db
 
+    def __str__(self):
+        return self.title
+
 class Renter(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)

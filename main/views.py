@@ -8,4 +8,4 @@ def index(request):
 
      #This seperated the html files from the views
      #All the html pages should be created in main/templates/main
-     return render(request, 'main/rb_index.html')
+     return render(request, 'main/index.html')
