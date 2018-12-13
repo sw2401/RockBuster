@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,6 +155,72 @@
      background-color: white;
      color: black;
    }
+
+   #mSelect input[type=button]{
+  float: left;
+  margin-top: 90px;
+  margin-left: 50px;
+  border-radius: 100px;
+  width: 180px;
+  height: 170px;
+  font-size: 45px;
+  border: none;
+  background-color: black;
+  color: #FDB31E;
+  font-family: 'Fredoka One', cursive;
+  cursor: pointer;
+}
+#mSelect input[type=button]:hover{
+  background-color: white;
+  color: black;
+}
+
+   #results{
+    text-align: center;
+   font-family: 'Fredoka One', cursive;
+   font-size: 25px;
+   background-color: #FDB31E;
+   border-radius: 10px;
+   height: 385px;
+   width: 900px;
+   margin-left: 130px;
+   display: none;
+ }
+ #results h2{
+  width: 420px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  height: 45px;
+  font-size: 40px;
+  padding-top: 8px;
+  margin-left: 237px;
+  letter-spacing: 3px;
+  font-weight: lighter;
+  margin-bottom: 0px;
+ }
+ #results table{
+   font-size: 20px;
+   line-height: 5px;
+   padding: 0px;
+   /*border: 10px solid #4A4A4A;*/
+   /*border-radius: 10px;*/
+   height: 300px;
+   width: 860px;
+   text-align: center;
+   margin-left: 19px;
+   margin-top: 0px;
+   border-collapse: collapse;
+ }
+ #results tr{
+   border: 4px solid #1F1F1F;
+ }
+ #results th{
+   color: black;
+   background-color: #4A4A4A;
+   letter-spacing: 2px;
+   font-weight: 400;
+ }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -179,7 +247,6 @@
       c.style.color = "#FDB31E";
       c.style.backgroundColor = "black"
   }
-
   function showTV() {
       var x = document.getElementById("mSelect");
       var y = document.getElementById("tvSelect");
@@ -200,7 +267,6 @@
       c.style.color = "#FDB31E";
       c.style.backgroundColor = "black"
   }
-
   function showVG() {
       var x = document.getElementById("mSelect");
       var y = document.getElementById("tvSelect");
@@ -221,10 +287,13 @@
       c.style.color = "black";
       c.style.backgroundColor = "#FDB31E"
   }
+  function showResults(){
+  var a = document.getElementById("results");
+  a.style.display = "block";
+}
 
   function init(){
     showMovie();
-
     var d = document.getElementById("mVal");
     var e = document.getElementById("tVal");
     var f = document.getElementById("vVal");
@@ -232,13 +301,16 @@
     var q = document.getElementById("mSelect");
     var r = document.getElementById("tvSelect");
     var s = document.getElementById("vgSelect");
-
     d.onclick = showMovie;
     e.onclick = showTV;
     f.onclick = showVG;
+
+    var z = document.getElementById("msub");
+    var a = document.getElementById("results");
+    a.style.display = "none";
   }
   </script>
-  <link rel="shortcut icon" type="image/png" href="rock.jpg"/>
+  <link rel="shortcut icon" type="image/png" href="https://i.kym-cdn.com/entries/icons/facebook/000/018/124/therock.jpg"/>
 
   <!--datalists-->
   <datalist id="years">
@@ -318,7 +390,7 @@
     <h3>Fill out as many forms as you like!</h3>
 
     <div id="mSelect">
-      <form action="" method="get" name="movieOptions">
+      <form name="movieOptions">
         <table>
           <tr>
             <td><label for="mTitle">Title</label></td>
@@ -345,12 +417,12 @@
             <td><input id="mPrice" list="prices" name="price"/></td>
           </tr>
         </table>
-        <input type="submit" name="sub1" id="msub" value="Submit">
+        <input type="button" name="sub1" id="msub" value="Submit" onclick = "showResults()">
       </form>
     </div>
 
     <div id="tvSelect">
-      <form action="" method="get" name="tvOptions">
+      <form action="" method="" name="tvOptions">
         <table>
           <tr>
             <td><label for="tvTitle">Title</label></td>
@@ -386,7 +458,7 @@
     </div>
 
     <div id="vgSelect">
-      <form action="" method="get" name="vgOptions">
+      <form action="" method="" name="vgOptions">
         <table>
           <tr>
             <td><label for="vgTitle">Title</label></td>
@@ -417,6 +489,28 @@
       </form>
     </div>
   </div>
+
+  <div id="results">
+    <h2>Search Results</h2>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Director</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        {% block content %}
+          {% for q in content %}
+            <td>{{q}}</td>
+          {% endfor %}
+        {% endblock content %}
+      </tr>
+    </table> 
+  </div>
+
 
 </body>
 </html>
