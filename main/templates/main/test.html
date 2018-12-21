@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <title>
+           
+        </title>
+        <script>
+            
+        </script>
+        <style>
+           
+        </style>
+    </head>
+
+    <body>
+       
+        <h1>RockBuster</h1>
+        <p>Results: TItle and Avalibility</p>
+
+        {% block content %}
+
+        <!--{{ context }}-->
+        {% for c in context %}
+        <p>{{c}}</p>
+        {% endfor %}
+
+       <li><a href="/main">Return to Search</a></li>
+
+        {% endblock content %}
+
+
+    </body>
+</html>

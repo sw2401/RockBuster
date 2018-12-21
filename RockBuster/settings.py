@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'iq98#rf_z_p=45r-6+yk59nax=s!cwef2o@&d(6e#42a*3hqh7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True   #originally set to True
+#DEBUG = False 
 
 ALLOWED_HOSTS = []
 
@@ -119,3 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Added this for request processes 12/13/18
+TEMPLATE_CONTEXT_PROCESSORS = (
+    ...,
+    'django.core.context_processors.request',
+
+)

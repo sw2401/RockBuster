@@ -318,6 +318,7 @@
     <h3>Fill out as many forms as you like!</h3>
 
     <div id="mSelect">
+      <!--
       <form action="" method="get" name="movieOptions">
         <table>
           <tr>
@@ -347,6 +348,19 @@
         </table>
         <input type="submit" name="sub1" id="msub" value="Submit">
       </form>
+      -->
+
+      {% block content %}
+
+      <!--{{ context }}-->
+      {% for c in context %}
+      <p>{{c}}</p>
+      {% endfor %}
+
+     <li><a href="/main">Return to Search</a></li>
+
+   {% endblock content %}
+
     </div>
 
     <div id="tvSelect">
@@ -385,6 +399,7 @@
       </form>
     </div>
 
+    
     <div id="vgSelect">
       <form action="" method="get" name="vgOptions">
         <table>
@@ -416,7 +431,12 @@
         <input type="submit" name="sub3" id="vsub" value="Submit">
       </form>
     </div>
+    
+
+   
+
   </div>
 
+  
 </body>
 </html>
