@@ -597,6 +597,104 @@ def search(request):
                     else:
                          ti = year + ' and ' + price + ' is not a valid selection'
                          return render (request, 'main/test.html', {'context':[ti]})
+
+               #Genre
+               #------
+               #Search by Genre and rating
+               if(title=='' and direct=='' and year=='' and genre!='' and rating!='' and price==''):
+               
+                    mv = Movie.objects.filter(genre__iexact=genre).filter(rating__iexact=rating)
+                    count = Movie.objects.filter(genre__iexact=genre).filter(rating__iexact=rating).count()
+                    if(count == 3):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              ti3 = mv[2].title
+                              av3 = mv[2].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2, ti3, av3]})
+                    elif(count == 2):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2]})
+                    elif(count == 1):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              return render (request, 'main/test.html', {'context':[ti, av]})
+                    else:
+                         ti = genre + ' and ' + rating + ' is not a valid selection'
+                         return render (request, 'main/test.html', {'context':[ti]})
+
+               #Search by Genre and price
+               if(title=='' and direct=='' and year=='' and genre!='' and rating=='' and price!=''):
+               
+                    mv = Movie.objects.filter(genre__iexact=genre).filter(price=price)
+                    count = Movie.objects.filter(genre__iexact=genre).filter(price=price).count()
+                    if(count == 3):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              ti3 = mv[2].title
+                              av3 = mv[2].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2, ti3, av3]})
+                    elif(count == 2):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2]})
+                    elif(count == 1):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              return render (request, 'main/test.html', {'context':[ti, av]})
+                    else:
+                         ti = genre + ' and ' + price + ' is not a valid selection'
+                         return render (request, 'main/test.html', {'context':[ti]})
+
+               #Search by rating and price
+               if(title=='' and direct=='' and year=='' and genre=='' and rating!='' and price!=''):
+               
+                    mv = Movie.objects.filter(rating__iexact=rating).filter(price=price)
+                    count = Movie.objects.filter(rating__iexact=rating).filter(price=price).count()
+                    if(count == 3):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              ti3 = mv[2].title
+                              av3 = mv[2].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2, ti3, av3]})
+                    elif(count == 2):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2]})
+                    elif(count == 1):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              return render (request, 'main/test.html', {'context':[ti, av]})
+                    else:
+                         ti = rating + ' and ' + price + ' is not a valid selection'
+                         return render (request, 'main/test.html', {'context':[ti]})
+
+
+                         '''
+               .filter(title__iexact=title)  .filter(director__iexact=direct)   .filter(year=year)  
+               .filter(genre__iexact=genre)  .filter(rating__iexact=rating)     .filter(price=price)
+               '''
                #-------------------------------------------------------------------------------------------
                
 
@@ -1054,6 +1152,36 @@ def search(request):
                               return render (request, 'main/test.html', {'context':[ti, av]})
                     else:
                          ti = year + ' , ' + genre + ' ' + price + ' is not a valid selection'
+                         return render (request, 'main/test.html', {'context':[ti]})
+
+                #Search by year, rating, price
+               if(title=='' and direct=='' and year!='' and genre=='' and rating!='' and price!=''):
+               
+                    mv = Movie.objects.filter(year=year).filter(rating__iexact=rating).filter(price=price)
+                    count = Movie.objects.filter(year=year).filter(rating__iexact=rating).filter(price=price).count()
+                    if(count == 3):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              ti3 = mv[2].title
+                              av3 = mv[2].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2, ti3, av3]})
+                    elif(count == 2):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              ti2 = mv[1].title
+                              av2 = mv[1].availability
+                              return render (request, 'main/test.html', {'context':[ti, av, ti2, av2]})
+                    elif(count == 1):
+                         if(mv):
+                              ti = mv[0].title
+                              av = mv[0].availability
+                              return render (request, 'main/test.html', {'context':[ti, av]})
+                    else:
+                         ti = year + ' , ' + rating + ' ' + price + ' is not a valid selection'
                          return render (request, 'main/test.html', {'context':[ti]})
 
                # Genre
