@@ -120,6 +120,7 @@
     background-color: #FDB31E;
     border-radius: 10px;
     height: 350px;
+    font-weight: lighter;
   }
 
     table{
@@ -128,12 +129,15 @@
     margin-left: 90px;
     margin-top: 20px;
     float: left;
+    font-weight: lighter;
+    letter-spacing: 1px;
   }
     input[type=text],input[list="years"],input[list="genres"],input[list="rates"],input[list="prices"],input[list="platforms"],input[list="vg_genres"],input[list="vg_years"],input[list="vg_rates"]{
       width: 250px;
       height: 25px;
       font-size: 15px;
       font-family:sans-serif;
+      font-weight: lighter;
   }
     input[type=submit]{
      float: left;
@@ -148,6 +152,7 @@
      color: #FDB31E;
      font-family: 'Fredoka One', cursive;
      cursor: pointer;
+     font-weight: lighter;
    }
    input[type=submit]:hover{
      background-color: white;
@@ -357,9 +362,9 @@
       <p>{{c}}</p>
       {% endfor %}
 
-     <li><a href="/main">Return to Search</a></li>
+      <li><a href="/main">Return to Search</a></li>
 
-   {% endblock content %}
+      {% endblock content %}
 
     </div>
 
@@ -398,8 +403,7 @@
         <input type="submit" name="sub2" id="tsub" value="Submit">
       </form>
     </div>
-
-    
+ 
     <div id="vgSelect">
       <form action="" method="get" name="vgOptions">
         <table>
@@ -431,12 +435,8 @@
         <input type="submit" name="sub3" id="vsub" value="Submit">
       </form>
     </div>
-    
-
-   
 
   </div>
-
   
 </body>
 </html>

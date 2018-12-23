@@ -1,33 +1,124 @@
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>
-           
-        </title>
-        <script>
-            
-        </script>
+        <meta charset="utf-8">
+        <title>RockBuster</title>
+        <link rel="stylesheet" href="rb_index.css">
+        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
         <style>
-           
+                html{
+                    margin-top: 10px;
+                    margin-left: 90px;
+                    margin-right: 90px;
+                    background-color: #911919;
+                  }
+                  
+                  h1{
+                    background-color: #FDB31E;
+                    color: black;
+                    height: 75px;
+                    width: 480px;
+                    font-size: 70px;
+                    font-family: 'Black Han Sans', sans-serif;
+                    float: left;
+                    margin-top: 1px;
+                    text-align: center;
+                    border-radius: 8px;
+                  }
+                  img{
+                    border-radius: 50%;
+                    float: left;
+                    margin-left: 7px;
+                    height: 150px;
+                    position: absolute;
+                  }
+                  h2{
+                    color: #FDB31E;
+                    background-color: black;
+                    width: 530px;
+                    height: 75px;
+                    font-size: 30px;
+                    font-family: 'Black Han Sans', sans-serif;
+                    text-align: center;
+                    border-radius: 8px;
+                    margin-left: 640px;
+                    line-height: 38px;
+                    letter-spacing: 1.5px;
+                  }
+                  #result{
+                    margin-top: 100px;
+                    text-align: center;
+                    font-family: 'Fredoka One', cursive;
+                    font-size: 25px;
+                    background-color: white;
+                    border-radius: 10px;
+                    height: 95px;
+                    width: 900px;
+                    margin-left: 130px;
+                    line-height: 90px;
+                  }
+                  #result h3{
+                    letter-spacing: 1px;
+                    width: 420px;
+                    display: inline;
+                    height: 40px;
+                    font-size: 35px;
+                    padding-right: 11px;
+                    position: relative;
+                    z-index: 1;
+                  }
+                  #result p{
+                    background-color: #4A4A4A;
+                    margin-top: 0px;
+                    border-radius: 0px;
+                    position: relative;
+                    top: -5px;
+                    z-index: -1;
+                    text-align: center;
+                    margin-bottom: 0px;
+                    border-left: 5px solid black;
+                    border-right: 5px solid black;
+                    border-bottom: 5px solid black;
+                  }
+                  #result a{
+                    background-color: black;
+                    color: white;
+                    width: 350px;
+                    padding: 10px;
+                    text-decoration: none;
+                    border-radius: 10px;
+                    margin-top: 0px;
+                    font-weight: lighter;
+                    letter-spacing: 2px;           
+                }
+                #result a:hover{
+                    background-color: #FDB31E;
+                    color: black;
+                }
         </style>
     </head>
 
     <body>
        
         <h1>RockBuster</h1>
-        <p>Results: TItle and Avalibility</p>
+        <img src="https://i.kym-cdn.com/entries/icons/facebook/000/018/124/therock.jpg" alt="rock">
+        <h2>Movie, TV Show, Video Game Rentals and more!</h2>
 
-        {% block content %}
+        <div id="result">
+            <h3>Results: Title and Avalibility</h3>
 
-        <!--{{ context }}-->
-        {% for c in context %}
-        <p>{{c}}</p>
-        {% endfor %}
+            {% block content %}
+            <!--{{ context }}-->
+            {% for c in context %}
+            <p>{{c}}</p>
+            {% endfor %}
+            <h3><a href="/main">Return to Search</a></h3>
 
-       <li><a href="/main">Return to Search</a></li>
-
-        {% endblock content %}
-
+            {% endblock content %}
+        </div>
 
     </body>
 </html>

@@ -123,6 +123,8 @@ table{
   margin-top: 20px;
   float: left;
 }
+
+
 input[type=text],input[list="years"],input[list="genres"],input[list="rates"],input[list="prices"],input[list="platforms"],input[list="vg_genres"],input[list="vg_years"],input[list="vg_rates"]{
     width: 250px;
     height: 25px;
